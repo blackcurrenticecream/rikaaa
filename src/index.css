@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Syne:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&family=Caveat:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-header: "Cormorant Garamond", serif;
+  --font-body: "Syne", sans-serif;
+  --font-handwriting: "Dancing Script", cursive;
+  --font-letter: "Caveat", cursive;
+  --color-jayrika-purple-dark: #0f0720;
+  --color-jayrika-purple-mid: #1a0b3c;
+  --color-jayrika-neon-purple: #bc13fe;
+  --color-jayrika-neon-pink: #ff00ff;
+  --color-jayrika-neon-cyan: #00ffff;
+  --color-jayrika-gold: #ffd700;
+  --color-jayrika-burgundy: #ffb8d1;
+  --color-jayrika-cream: #0f0720;
+  --color-jayrika-pink: #fbcfe8;
+  --color-obsidian-base: #FFF8F8; /* Redefining base for the light theme */
+}
+
+:root {
+  background-color: var(--color-jayrika-cream);
+  color: var(--color-jayrika-burgundy);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-header {
+  font-family: var(--font-header);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(74, 29, 29, 0.05);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 20px 50px -12px rgba(236, 72, 153, 0.15);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-jayrika-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-jayrika-gold);
+  border-radius: 10px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
